@@ -23,14 +23,15 @@ app.set('trust proxy', 1);
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "http://localhost:3000",
+    "http://localhost:3001",
     "https://onnes-in-frontend-vercel.vercel.app",
     "https://onnes.in",
     "https://rewamp.onnes.in",
     "https://rewamp2.onnes.in",
     "https://onnesaerospace.com",
     "https://www.onnesaerospace.com",
-    "https://rewamp3.onnes.in"
+    "https://rewamp3.onnes.in",
+    "https://onnes-new-jun-2026-lilac.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
