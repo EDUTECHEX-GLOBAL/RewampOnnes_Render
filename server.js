@@ -13,6 +13,9 @@ const visitorRoutes = require('./Admin/routes/VisitorRoute');
 const weekdataRoutes = require('./Admin/routes/WeekDataRoute');
 const newsletterRoutes = require('./Admin/routes/newsletterRoutes');
 const publicBlogRoutes = require('./Admin/routes/publicBlogRoutes');
+// NEW — Media page news (separate from the newsletter feature)
+const mediaNewsRoutes = require('./Admin/routes/mediaNewsRoutes');
+const publicMediaNewsRoutes = require('./Admin/routes/publicMediaNewsRoutes');
 
 dotenv.config();
 
@@ -72,6 +75,10 @@ app.use('/api/admin-visitors', visitorRoutes);
 app.use('/api/week-data', weekdataRoutes);
 app.use('/api/admin-newsletter', newsletterRoutes);
 app.use('/api/blog', publicBlogRoutes); // public, unauthenticated — backs the website's /blogs pages
+
+// NEW — Media page news
+app.use('/api/admin-media-news', mediaNewsRoutes);   // protected — admin dashboard
+app.use('/api/media-news', publicMediaNewsRoutes);   // public — website /media page
 
 // Health check (general API status)
 app.get("/api", (req, res) => {
