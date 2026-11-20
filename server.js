@@ -16,6 +16,9 @@ const publicBlogRoutes = require('./Admin/routes/publicBlogRoutes');
 // NEW — Media page news (separate from the newsletter feature)
 const mediaNewsRoutes = require('./Admin/routes/mediaNewsRoutes');
 const publicMediaNewsRoutes = require('./Admin/routes/publicMediaNewsRoutes');
+// NEW — Systems & Solutions brochures (Cloudinary + MongoDB fallback)
+const systemBrochureRoutes = require('./Admin/routes/systemBrochureRoutes');
+const publicSystemBrochureRoutes = require('./Admin/routes/publicSystemBrochureRoutes');
 
 dotenv.config();
 
@@ -79,6 +82,10 @@ app.use('/api/blog', publicBlogRoutes); // public, unauthenticated — backs the
 // NEW — Media page news
 app.use('/api/admin-media-news', mediaNewsRoutes);   // protected — admin dashboard
 app.use('/api/media-news', publicMediaNewsRoutes);   // public — website /media page
+
+// NEW — Systems & Solutions brochures
+app.use('/api/admin-system-brochures', systemBrochureRoutes);   // protected — admin dashboard
+app.use('/api/system-brochure', publicSystemBrochureRoutes);    // public — brochure download on the website
 
 // Health check (general API status)
 app.get("/api", (req, res) => {
