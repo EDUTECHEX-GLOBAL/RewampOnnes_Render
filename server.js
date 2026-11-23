@@ -34,6 +34,7 @@ app.use(cors({
     "https://onnes.in",
     "https://rewamp.onnes.in",
     "https://rewamp2.onnes.in",
+    "https://test.onnesaerospace.com/",
     "https://onnesaerospace.com",
     "https://www.onnesaerospace.com",
     "https://rewamp3.onnes.in",
